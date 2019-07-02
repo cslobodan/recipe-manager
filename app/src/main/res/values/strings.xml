@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Name for the application [CHAR LIMIT=12] -->
+    <string name="app_name">Recipe Manager</string>
+
+    <!-- Label for overflow menu option that inserts fake recipe data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_existing_data">Insert Existing Recipes</string>
+
+    <!-- Label for overflow menu option that deletes all recipe data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Recipes</string>
+
+    <!-- Title text for the empty view, which describes the empty fridge image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">You don\'t have any recipe yet...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a recipe [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Get started by adding your favourite</string>
+
+    <!-- Title for the activity to add a new recipe [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_recipe">Add a Recipe</string>
+
+    <!-- Title for the activity to edit an existing recipe [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_edit_recipe">Edit Recipe</string>
+
+    <!-- Title for the activity to edit an existing recipe [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_recipe_details">Recipe Details</string>
+
+    <!-- Label for editor menu option to save recipe and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current recipe [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Toast message in editor when new recipe has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_recipe_successful">Recipe saved</string>
+
+    <!-- Toast message in editor when new recipe has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_recipe_failed">Error with saving recipe</string>
+
+    <!-- Toast message in editor when current recipe was successfully updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_recipe_successful">Recipe updated</string>
+
+    <!-- Toast message in editor when current recipe has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_recipe_failed">Error with updating recipe</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current recipe [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
+
+    <!-- Toast message in editor when current recipe was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_recipe_successful">Recipe deleted</string>
+
+    <!-- Toast message in editor when current recipe has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_recipe_failed">Error with deleting recipe</string>
+
+    <!-- Dialog message to ask the user to confirm deleting the current recipe [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this recipe?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current recipe [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to confirm editing the current recipe [CHAR LIMIT=20] -->
+    <string name="action_edit">Edit</string>
+
+
+    <!-- Dialog button text for the option to cancel deletion of the current recipe [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="category_overview">Overview</string>
+
+    <!-- Label for meal category information in the editor [CHAR LIMIT=30] -->
+    <string name="category_meal">Meal</string>
+
+    <!-- Label for preparation time information in the editor [CHAR LIMIT=30] -->
+    <string name="category_time">Time</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_name">Recipe Name</string>
+
+    <!-- Text hint for hashtag field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_hashtag">Hashtags</string>
+
+    <!-- Text hint for preparation time field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_time">Preparation time</string>
+
+    <!-- Units for preparation time (minutes) [CHAR LIMIT=5] -->
+    <string name="unit_recipe_time">min</string>
+
+    <!-- Label for dropdown menu option if the meal is dessert [CHAR LIMIT=20] -->
+    <string name="meal_dessert">Dessert</string>
+
+    <!-- Label for dropdown menu option if the meal is breakfast [CHAR LIMIT=20] -->
+    <string name="meal_breakfast">Breakfast</string>
+
+    <!-- Label for dropdown menu option if the meal is lunch [CHAR LIMIT=20] -->
+    <string name="meal_lunch">Lunch</string>
+
+    <!-- Label for dropdown menu option if the meal is dinner [CHAR LIMIT=20] -->
+    <string name="meal_dinner">Dinner</string>
+
+    <!-- Label for the recipe is no hashtag is entered [CHAR LIMIT=20] -->
+    <string name="no_hashtag"> </string>
+
+    <!-- Error set for field name if it is empty [CHAR LIMIT=20] -->
+    <string name="name_required">Name is required</string>
+
+    <!-- Error set for field time if it is empty [CHAR LIMIT=20] -->
+    <string name="time_required">Preparation time is required</string>
+
+    <!-- Category ingredients [CHAR LIMIT=20] -->
+    <string name="category_ingredients">Ingredients</string>
+    <string name="category_preparation">Preparation</string>
+    <string name="hint_preparation">Step 1\nStep 2\nStep 3</string>
+    <string name="pancakes_ingredients">300 g flour\n3 eggs\n250 ml milk\n250 ml water\n2 oil spoon\nLittle salt</string>
+    <string name="pancakes_instructions">Mix well all the ingredients with a mixer and bake in a little bit of oil. You should get 10-12 pancakes.</string>
+    <string name="hint_ingredients">Ingredient 1\nIngrediet 2\nIngredient 3</string>
+    <string name="name_existing_recipe">Pancake</string>
+    <string name="hashtag_existing_recipe">#pancakesFor4People</string>
+</resources>
