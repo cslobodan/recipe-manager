@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.scvetkovic.android.foodmaniac;
 
 import android.content.Context;
@@ -56,8 +41,7 @@ public class FoodCursorAdapter extends CursorAdapter {
 
     /**
      * This method binds the pet data (in the current row pointed to by cursor) to the given
-     * list item layout. For scvetkovic, the name for the current recipe can be set on the name TextView
-     * in the list item layout.
+     * list item layout.
      *
      * @param view    Existing view, returned earlier by newView() method
      * @param context app context
@@ -71,12 +55,12 @@ public class FoodCursorAdapter extends CursorAdapter {
         TextView summaryTextView = (TextView) view.findViewById(R.id.summary);
         TextView minutesTextView = (TextView) view.findViewById(R.id.preparation_time);
 
-        // Find the columns of pet attributes that we're interested in
+        // Find the columns of recipe attributes that we're interested in
         int nameColumnIndex = cursor.getColumnIndex(FoodEntry.COLUMN_FOOD_NAME);
         int hashtagColumnIndex = cursor.getColumnIndex(FoodEntry.COLUMN_FOOD_HASHTAGS);
         int minutesColumnIndex = cursor.getColumnIndex(FoodEntry.COLUMN_FOOD_TIME);
 
-        // Read the pet attributes from the Cursor for the current pet
+        // Read the recipe attributes from the Cursor for the current recipe
         String recipeName = cursor.getString(nameColumnIndex);
         String recipeHashtags = cursor.getString(hashtagColumnIndex);
         String recipeMinutes = cursor.getString(minutesColumnIndex);
@@ -86,7 +70,7 @@ public class FoodCursorAdapter extends CursorAdapter {
             recipeHashtags = context.getString(R.string.no_hashtag);
         }
 
-        // Update the TextViews with the attributes for the current pet
+        // Update the TextViews with the attributes for the current recipe
         nameTextView.setText(recipeName);
         summaryTextView.setText(recipeHashtags);
         minutesTextView.setText(recipeMinutes);

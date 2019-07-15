@@ -20,7 +20,7 @@ import android.content.ContentResolver;
 import android.provider.BaseColumns;
 
 /**
- * API Contract for the Food Maniac app.
+ * API Contract for the Recipe app.
  */
 public final class FoodContract {
 
@@ -66,7 +66,7 @@ public final class FoodContract {
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_FOOD;
 
         /**
-         * The MIME type of the {@link #CONTENT_URI} for a single pet.
+         * The MIME type of the {@link #CONTENT_URI} for a single recipe.
          */
         public static final String CONTENT_ITEM_TYPE =
                 ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_FOOD;

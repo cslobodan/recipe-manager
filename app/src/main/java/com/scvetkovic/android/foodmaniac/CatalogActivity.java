@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.scvetkovic.android.foodmaniac;
 
 import android.app.LoaderManager;
@@ -36,12 +21,12 @@ import android.widget.ListView;
 import com.scvetkovic.android.foodmaniac.data.FoodContract.FoodEntry;
 
 /**
- * Displays list of foodmaniac that were entered and stored in the app.
+ * Displays list of recipes that were entered and stored in the app.
  */
 public class CatalogActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    /** Identifier for the pet data loader */
+    /** Identifier for the recipe data loader */
     private static final int PET_LOADER = 0;
 
     /** Adapter for the ListView */
@@ -62,14 +47,14 @@ public class CatalogActivity extends AppCompatActivity implements
             }
         });
 
-        // Find the ListView which will be populated with the pet data
+        // Find the ListView which will be populated with the recipe data
         ListView petListView = (ListView) findViewById(R.id.list);
 
         // Find and set empty view on the ListView, so that it only shows when the list has 0 items.
         View emptyView = findViewById(R.id.empty_view);
         petListView.setEmptyView(emptyView);
 
-        // Setup an Adapter to create a list item for each row of pet data in the Cursor.
+        // Setup an Adapter to create a list item for each row of recipe data in the Cursor.
         // There is no pet data yet (until the loader finishes) so pass in null for the Cursor.
         mCursorAdapter = new FoodCursorAdapter(this, null);
         petListView.setAdapter(mCursorAdapter);
@@ -81,11 +66,9 @@ public class CatalogActivity extends AppCompatActivity implements
                 // Create new intent to go to {@link EditorActivity}
                 Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
 
-                // Form the content URI that represents the specific pet that was clicked on,
+                // Form the content URI that represents the specific recipe that was clicked on,
                 // by appending the "id" (passed as input to this method) onto the
                 // {@link FoodEntry#CONTENT_URI}.
-                // For scvetkovic, the URI would be "content://com.scvetkovic.android.foodmaniac/foodmaniac/2"
-                // if the pet with ID 2 was clicked on.
                 Uri currentPetUri = ContentUris.withAppendedId(FoodEntry.CONTENT_URI, id);
 
                 // Set the URI on the data field of the intent
@@ -101,7 +84,7 @@ public class CatalogActivity extends AppCompatActivity implements
     }
 
     /**
-     * Helper method to insert hardcoded food data into the database. For debugging purposes only.
+     * Helper method to insert hardcoded recipe data into the database. For debugging purposes only.
      */
     private void insertFood() {
         // Create a ContentValues object where column names are the keys,
@@ -114,14 +97,11 @@ public class CatalogActivity extends AppCompatActivity implements
         values.put(FoodEntry.COLUMN_FOOD_INGREDIENTS, getResources().getString(R.string.pancakes_ingredients));
         values.put(FoodEntry.COLUMN_FOOD_INSTRUCIONS, getResources().getString(R.string.pancakes_instructions));
 
-        // Insert a new row for Toto into the provider using the ContentResolver.
-        // Use the {@link FoodEntry#CONTENT_URI} to indicate that we want to insert
-        // into the foodmaniac database table.
         Uri newUri = getContentResolver().insert(FoodEntry.CONTENT_URI, values);
     }
 
     /**
-     * Helper method to delete all foodmaniac in the database.
+     * Helper method to delete all recipes in the database.
      */
     private void deleteAllFood() {
         int rowsDeleted = getContentResolver().delete(FoodEntry.CONTENT_URI, null, null);
@@ -172,7 +152,7 @@ public class CatalogActivity extends AppCompatActivity implements
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        // Update {@link FoodCursorAdapter} with this new cursor containing updated pet data
+        // Update {@link FoodCursorAdapter} with this new cursor containing updated recipe data
         mCursorAdapter.swapCursor(data);
     }
 

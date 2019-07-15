@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.scvetkovic.android.foodmaniac;
 
 import android.app.AlertDialog;
@@ -42,12 +27,12 @@ import com.scvetkovic.android.foodmaniac.data.FoodContract;
 import com.scvetkovic.android.foodmaniac.data.FoodContract.FoodEntry;
 
 /**
- * Allows user to create a new pet or edit an existing one.
+ * Allows user to create a new recipe or edit an existing one.
  */
 public class EditorActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    /** Identifier for the pet data loader */
+    /** Identifier for the recipe data loader */
     private static final int EXISTING_PET_LOADER = 0;
 
     /** Content URI for the existing recipe (null if it's a new pet) */
@@ -78,7 +63,7 @@ public class EditorActivity extends AppCompatActivity implements
      */
     private int mMeal = FoodContract.FoodEntry.MEAL_DESSERT;
 
-    /** Boolean flag that keeps track of whether the pet has been edited (true) or not (false) */
+    /** Boolean flag that keeps track of whether the recipe has been edited (true) or not (false) */
     private boolean mFoodHasChanged = false;
 
     /**
@@ -100,12 +85,12 @@ public class EditorActivity extends AppCompatActivity implements
 
 
         // Examine the intent that was used to launch this activity,
-        // in order to figure out if we're creating a new pet or editing an existing one.
+        // in order to figure out if we're creating a new recipe or editing an existing one.
         Intent intent = getIntent();
         mCurrentFoodUri = intent.getData();
 
-        // If the intent DOES NOT contain a pet content URI, then we know that we are
-        // creating a new pet.
+        // If the intent DOES NOT contain a recipe content URI, then we know that we are
+        // creating a new recipe.
         if (mCurrentFoodUri == null) {
             // This is a new pet, so change the app bar to say "Add a Recipe"
             setTitle(getString(R.string.editor_activity_title_new_recipe));
@@ -117,7 +102,7 @@ public class EditorActivity extends AppCompatActivity implements
             // Otherwise this is an existing recipe, so change app bar to say "Recipe Details"
             setTitle(getString(R.string.editor_activity_title_recipe_details));
 
-            // Initialize a loader to read the pet data from the database
+            // Initialize a loader to read the recipe data from the database
             // and display the current values in the editor
             getLoaderManager().initLoader(EXISTING_PET_LOADER, null, this);
         }

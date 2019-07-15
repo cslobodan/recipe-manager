@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.scvetkovic.android.foodmaniac.data;
 
 import android.content.ContentProvider;
@@ -25,18 +10,15 @@ import android.net.Uri;
 import android.util.Log;
 import com.scvetkovic.android.foodmaniac.data.FoodContract.FoodEntry;
 
-/**
- * {@link ContentProvider} for Food Maniac app.
- */
 public class FoodProvider extends ContentProvider {
 
     /** Tag for the log messages */
     public static final String LOG_TAG = FoodProvider.class.getSimpleName();
 
-    /** URI matcher code for the content URI for the foodmaniac table */
+    /** URI matcher code for the content URI for the recipe table */
     private static final int RECIPES = 100;
 
-    /** URI matcher code for the content URI for a single pet in the foodmaniac table */
+    /** URI matcher code for the content URI for a single recipe in the recipe table */
     private static final int RECIPE_ID = 101;
 
     /**
@@ -89,9 +71,9 @@ public class FoodProvider extends ContentProvider {
         int match = sUriMatcher.match(uri);
         switch (match) {
             case RECIPES:
-                // For the RECIPES code, query the foodmaniac table directly with the given
+                // For the RECIPES code, query the recipe table directly with the given
                 // projection, selection, selection arguments, and sort order. The cursor
-                // could contain multiple rows of the foodmaniac table.
+                // could contain multiple rows of the recipe table.
                 cursor = database.query(FoodEntry.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
                 break;
@@ -107,7 +89,7 @@ public class FoodProvider extends ContentProvider {
                 selection = FoodContract.FoodEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
 
-                // This will perform a query on the foodmaniac table where the _id equals 3 to return a
+                // This will perform a query on the recipe table where the _id equals 3 to return a
                 // Cursor containing that row of the table.
                 cursor = database.query(FoodContract.FoodEntry.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
